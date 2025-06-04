@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Update package list
+sudo apt update
+sudo apt install -fwget https://downloads.realvnc.com/download/file/vnc.files/VNC-Server-7.13.1-Linux-x64.deb
+sudo apt install ./VNC-Server-7.13.1-Linux-x64.deb
+sudo dpkg -i VNC-Server-7.13.1-Linux-x64.deb
+sudo systemctl enable vncserver-x11-serviced.service
+sudo systemctl start vncserver-x11-serviced.service
+
+
+# Install Git
+sudo apt install -y git
+sudo apt update && sudo apt upgrade -y
+
+# Install Curl
+sudo apt install -y curl
+
+# Print versions
+git --version
+curl --version
